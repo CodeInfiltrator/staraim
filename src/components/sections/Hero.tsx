@@ -20,9 +20,9 @@ export function Hero() {
     <section className="relative min-h-[100svh] overflow-hidden pt-28 pb-16 sm:pt-32">
       {/* ------------------------------------------------------------ backdrop */}
       <div className="pointer-events-none absolute inset-0">
-        <Starfield />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(207,224,160,0.09),transparent_70%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-void to-transparent" />
+        <Starfield density={0.5} />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_10%,rgba(207,224,160,0.14),transparent_65%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-void via-void/80 to-transparent" />
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr]">

@@ -63,7 +63,7 @@ export function Button({
         x.set(0);
         y.set(0);
       }}
-      className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-colors ${BUTTON_STYLES[variant]} ${className}`}
+      className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${BUTTON_STYLES[variant]} ${className}`}
       {...props}
     >
       {children}
@@ -87,7 +87,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-colors ${BUTTON_STYLES[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-20px_rgba(207,224,160,0.5)] ${BUTTON_STYLES[variant]} ${className}`}
     >
       {children}
     </Link>

@@ -359,7 +359,7 @@ export function SkyMap({ className = "" }: { className?: string }) {
 
   return (
     <div
-      className={`relative isolate overflow-hidden rounded-3xl border border-line bg-ink ${className}`}
+      className={`relative isolate overflow-hidden rounded-3xl border border-line bg-ink shadow-[0_60px_140px_-80px_rgba(207,224,160,0.25)] ${className}`}
     >
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full touch-none" />
       <div ref={layerRef} className="pointer-events-none absolute inset-0" />

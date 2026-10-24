@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ----------------------------------------------------------------- theme */
+/* ------------------------------------------------------------------ theme */
 @theme {
   /* Core surfaces — lifted straight from the watch UI. */
   --color-void: #000000;

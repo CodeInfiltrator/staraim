@@ -8,7 +8,7 @@ const COLUMNS = [
       { label: "Live sky", href: "#sky" },
       { label: "How it works", href: "#how" },
       { label: "The watch", href: "#watch" },
-      { label: "Catalogue", href: "#catalogue" },
+      { label: "Catalogue", href: "/catalogue" },
     ],
   },
   {

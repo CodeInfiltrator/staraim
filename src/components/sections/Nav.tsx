@@ -5,10 +5,10 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const LINKS = [
-  { href: "#sky", label: "Live sky" },
-  { href: "#how", label: "How it works" },
-  { href: "#watch", label: "Watch" },
-  { href: "#catalogue", label: "Catalogue" },
+  { href: "/sky", label: "Live sky" },
+  { href: "/catalogue", label: "Catalogue" },
+  { href: "/#how", label: "How it works" },
+  { href: "/#watch", label: "Watch" },
 ];
 
 export function Nav() {
@@ -53,30 +53,12 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#sky"
+          <Link
+            href="/sky"
             className="hidden rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-char transition-colors hover:bg-[#dcebba] sm:inline-flex"
           >
             Open the sky
-          </a>
-          <button
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-pill border border-line text-mist md:hidden"
-          >
-            <span className="flex flex-col gap-[5px]">
-              <span
-                className={`block h-px w-4 bg-current transition-transform ${
-                  open ? "translate-y-[3px] rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block h-px w-4 bg-current transition-transform ${
-                  open ? "-translate-y-[3px] -rotate-45" : ""
-                }`}
-              />
-            </span>
-          </button>
+          </Link>
         </div>
       </nav>
 
@@ -100,6 +82,13 @@ export function Nav() {
                   {l.label}
                 </Link>
               ))}
+              <Link
+                href="/sky"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex items-center justify-center rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-char"
+              >
+                Open the sky
+              </Link>
             </div>
           </motion.div>
         ) : null}

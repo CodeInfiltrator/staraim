@@ -62,27 +62,41 @@ export function Hero() {
 
           <Reveal from="up" delay={0.28}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <ButtonLink href="#sky">Open the live sky</ButtonLink>
-              <ButtonLink href="#watch" variant="secondary">
-                <WatchGlyph />
+              <ButtonLink href="/sky">Open the live sky</ButtonLink>
+              <ButtonLink href="/#watch" variant="secondary">
                 See the watch
               </ButtonLink>
             </div>
           </Reveal>
 
           <Reveal from="up" delay={0.36}>
-            <dl className="mt-12 grid max-w-lg grid-cols-2 gap-x-8 gap-y-5 border-t border-line pt-7 sm:grid-cols-4">
-              {STATS.map((s) => (
-                <div key={s.label}>
-                  <dt className="text-2xl font-medium tracking-[-0.02em] text-mist tabular-nums">
-                    {s.value}
-                  </dt>
-                  <dd className="mt-1 font-mono text-[10px] tracking-[0.14em] text-dim uppercase">
-                    {s.label}
-                  </dd>
+            <div className="mt-10 rounded-2xl border border-line bg-surface/60 p-6 backdrop-blur-sm">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="text-lg font-medium tracking-[-0.01em] text-mist">
+                    Download our app
+                  </h3>
+                  <p className="mt-1 text-sm text-fog">
+                    Coming soon to the App Store. Join the waitlist to get early access.
+                  </p>
                 </div>
-              ))}
-            </dl>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    disabled
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-pill border border-line bg-surface-2 px-5 py-2.5 text-sm font-medium text-dim opacity-60"
+                  >
+                    <AppleIcon />
+                    App Store — Coming soon
+                  </button>
+                  <button
+                    disabled
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-pill border border-line bg-surface-2 px-5 py-2.5 text-sm font-medium text-dim opacity-60"
+                  >
+                    TestFlight — Coming soon
+                  </button>
+                </div>
+              </div>
+            </div>
           </Reveal>
         </div>
 
@@ -108,20 +122,10 @@ export function Hero() {
   );
 }
 
-function WatchGlyph() {
+function AppleIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <rect
-        x="7"
-        y="5"
-        width="10"
-        height="14"
-        rx="3.2"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <path d="M9 5 10 2.5h4L15 5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M12 10v4M10 12h4" stroke="currentColor" strokeWidth="1.4" />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
     </svg>
   );
 }

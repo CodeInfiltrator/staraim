@@ -43,7 +43,7 @@ export function Orion({ size = 110, ...rest }: { size?: number } & SVGProps<SVGS
       </g>
       {STARS.map((s, i) => (
         <g key={i}>
-          <circle cx={s.x} cy={s.y} r={s.r * 2.4} fill="#CFE0A0" opacity="0.12" />
+          <circle cx={s.x} cy={s.y} r={s.r * 2.4} fill="#D0342C" opacity="0.12" />
           <circle cx={s.x} cy={s.y} r={s.r} fill="#eef0f6" />
         </g>
       ))}

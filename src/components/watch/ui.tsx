@@ -99,7 +99,7 @@ export function WatchButton({
 /** The four-bracket reticle the watch uses to frame a target. */
 export function WatchReticle({
   size = 92,
-  color = "#CFE0A0",
+  color = "#D0342C",
   opacity = 1,
   className = "",
 }: {
@@ -193,7 +193,7 @@ export function ProgressRing({
 export function Cube3D({
   size = 108,
   rotation = 0,
-  color = "#CFE0A0",
+  color = "#D0342C",
 }: {
   size?: number;
   rotation?: number;

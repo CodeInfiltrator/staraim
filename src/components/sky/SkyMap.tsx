@@ -427,7 +427,7 @@ export function SkyMap({ className = "" }: { className?: string }) {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="relative">
           <svg width="72" height="72" viewBox="0 0 72 72" className="opacity-80">
-            <g stroke="#CFE0A0" strokeWidth="1.2" fill="none" opacity="0.75">
+            <g stroke="#D0342C" strokeWidth="1.2" fill="none" opacity="0.75">
               <path d="M6 20V6h14" />
               <path d="M52 6h14v14" />
               <path d="M66 52v14H52" />
@@ -620,7 +620,7 @@ function SkyFallback({
 
       <div className="absolute inset-x-0 top-1/2 flex -translate-y-1/2 flex-col items-center gap-4 px-6 text-center">
         <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden>
-          <g stroke="#CFE0A0" strokeWidth="1.2" opacity="0.6">
+          <g stroke="#D0342C" strokeWidth="1.2" opacity="0.6">
             <path d="M6 16V6h10M36 6h10v10M46 36v10H36M16 46H6V36" />
           </g>
           <circle cx="26" cy="26" r="2" fill="#D0342C" />

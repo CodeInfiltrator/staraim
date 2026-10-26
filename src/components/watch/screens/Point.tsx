@@ -35,7 +35,7 @@ function ArmGlyph() {
         cx="48"
         cy="48"
         r="33"
-        stroke="#CFE0A0"
+        stroke="#D0342C"
         strokeWidth="1.2"
         strokeDasharray="3 7"
         strokeLinecap="round"
@@ -50,12 +50,12 @@ function ArmGlyph() {
       />
       <path
         d="M48 74V44"
-        stroke="#CFE0A0"
+        stroke="#D0342C"
         strokeWidth="3"
         strokeLinecap="round"
         opacity="0.85"
       />
-      <circle cx="48" cy="36" r="8" stroke="#CFE0A0" strokeWidth="2" />
+      <circle cx="48" cy="36" r="8" stroke="#D0342C" strokeWidth="2" />
       <path d="M48 22v6M33 31l4 4M63 31l-4 4" stroke="#D0342C" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );

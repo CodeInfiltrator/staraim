@@ -101,12 +101,12 @@ export function Nav() {
 export function Reticle({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden>
-      <circle cx="12" cy="12" r="9.2" stroke="#CFE0A0" strokeWidth="1.1" opacity="0.5" />
+      <circle cx="12" cy="12" r="9.2" stroke="#D0342C" strokeWidth="1.1" opacity="0.6" />
       <path
         d="M12 1.5v6M12 16.5v6M1.5 12h6M16.5 12h6"
-        stroke="#CFE0A0"
+        stroke="#D0342C"
         strokeWidth="1.1"
-        opacity="0.85"
+        opacity="0.9"
       />
       <circle cx="12" cy="12" r="2.1" fill="#D0342C" />
     </svg>

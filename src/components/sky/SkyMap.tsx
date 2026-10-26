@@ -70,7 +70,7 @@ function CompassRibbon({ heading }: { heading: number }) {
           </div>
         );
       })}
-      <div className="absolute top-0 left-1/2 h-4 w-px -translate-x-1/2 bg-sage shadow-[0_0_10px_rgba(207,224,160,0.9)]" />
+      <div className="absolute top-0 left-1/2 h-4 w-px -translate-x-1/2 bg-sage shadow-[0_0_10px_rgba(255,59,48,0.9)]" />
     </div>
   );
 }
@@ -359,7 +359,7 @@ export function SkyMap({ className = "" }: { className?: string }) {
 
   return (
     <div
-      className={`relative isolate overflow-hidden rounded-3xl border border-line bg-ink shadow-[0_60px_140px_-80px_rgba(207,224,160,0.25)] ${className}`}
+      className={`relative isolate overflow-hidden rounded-3xl border border-line bg-ink shadow-[0_60px_140px_-80px_rgba(255,59,48,0.25)] ${className}`}
     >
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full touch-none" />
       <div ref={layerRef} className="pointer-events-none absolute inset-0" />
@@ -433,7 +433,7 @@ export function SkyMap({ className = "" }: { className?: string }) {
               <path d="M66 52v14H52" />
               <path d="M20 66H6V52" />
             </g>
-            <circle cx="36" cy="36" r="2.4" fill="#EA6336" />
+            <circle cx="36" cy="36" r="2.4" fill="#ff3b30" />
           </svg>
           {target && !selected ? (
             <div className="absolute top-[76px] left-1/2 -translate-x-1/2 whitespace-nowrap text-center">
@@ -623,7 +623,7 @@ function SkyFallback({
           <g stroke="#CFE0A0" strokeWidth="1.2" opacity="0.6">
             <path d="M6 16V6h10M36 6h10v10M46 36v10H36M16 46H6V36" />
           </g>
-          <circle cx="26" cy="26" r="2" fill="#EA6336" />
+          <circle cx="26" cy="26" r="2" fill="#ff3b30" />
         </svg>
         <p className="max-w-xs font-mono text-[11px] leading-relaxed tracking-[0.14em] text-fog uppercase">
           This browser cannot open a WebGL context, so the live sky is

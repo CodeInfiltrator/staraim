@@ -10,11 +10,11 @@
   --color-surface-3: #1a1e28;
   --color-line: #232833;
 
-  /* Accents. Sage is the primary, mint the "live" signal. */
-  --color-sage: #cfe0a0;
-  --color-sage-dim: #b8d480;
-  --color-mint: #9fdfa8;
-  --color-char: #3a3a3a;
+  /* Accents. Coral is the primary accent. */
+  --color-sage: #EA6336;
+  --color-sage-dim: #f27146;
+  --color-mint: #EA6336;
+  --color-char: #0D1117;
 
   /* Text. */
   --color-mist: #eef0f6;

@@ -55,7 +55,7 @@ export function Nav() {
         <div className="flex items-center gap-3">
           <Link
             href="/sky"
-            className="hidden rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-char transition-colors hover:bg-[#dcebba] sm:inline-flex"
+            className="hidden rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#f27146] sm:inline-flex"
           >
             Open the sky
           </Link>
@@ -85,7 +85,7 @@ export function Nav() {
               <Link
                 href="/sky"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex items-center justify-center rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-char"
+                className="mt-2 inline-flex items-center justify-center rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-white"
               >
                 Open the sky
               </Link>
@@ -108,7 +108,7 @@ export function Reticle({ className = "" }: { className?: string }) {
         strokeWidth="1.1"
         opacity="0.85"
       />
-      <circle cx="12" cy="12" r="2.1" fill="#9FDFA8" />
+      <circle cx="12" cy="12" r="2.1" fill="#EA6336" />
     </svg>
   );
 }

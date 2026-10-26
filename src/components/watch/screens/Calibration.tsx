@@ -158,7 +158,7 @@ function ProgressRingOuter({
           cy={size / 2}
           r={r}
           fill="none"
-          stroke="#9FDFA8"
+          stroke="#EA6336"
           strokeWidth={stroke}
           strokeLinecap="round"
           strokeDasharray={c}
@@ -212,13 +212,13 @@ function CheckCircle() {
         cx="32"
         cy="32"
         r="29"
-        stroke="#9FDFA8"
+        stroke="#EA6336"
         strokeWidth="2.4"
         strokeOpacity="0.85"
       />
       <path
         d="M21 33.5 28.5 41 43.5 24"
-        stroke="#9FDFA8"
+        stroke="#EA6336"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"

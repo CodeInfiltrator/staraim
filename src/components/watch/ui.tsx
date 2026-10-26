@@ -141,7 +141,7 @@ export function ProgressRing({
   progress,
   size = 108,
   stroke = 5,
-  color = "#9FDFA8",
+  color = "#EA6336",
   track = "rgba(255,255,255,0.12)",
   children,
 }: {
@@ -247,10 +247,10 @@ export function Cube3D({
         y1={V.a[1]}
         x2={V.e[0]}
         y2={V.e[1]}
-        stroke="#9FDFA8"
+        stroke="#EA6336"
         strokeWidth="1.6"
       />
-      <circle cx={V.e[0]} cy={V.e[1]} r="2.4" fill="#9FDFA8" />
+      <circle cx={V.e[0]} cy={V.e[1]} r="2.4" fill="#EA6336" />
     </svg>
   );
 }

@@ -16,7 +16,7 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const BUTTON_STYLES: Record<ButtonVariant, string> = {
   primary:
-    "bg-sage text-char hover:bg-[#dcebba] active:bg-[#c2d492] shadow-[0_10px_40px_-18px_rgba(207,224,160,0.9)]",
+    "bg-sage text-white hover:bg-[#f27146] active:bg-[#d85a2f] shadow-[0_10px_40px_-18px_rgba(234,99,54,0.9)]",
   secondary:
     "bg-surface-2 text-mist border border-line hover:bg-surface-3 hover:border-char",
   ghost: "text-fog hover:text-mist",

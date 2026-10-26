@@ -433,7 +433,7 @@ export function SkyMap({ className = "" }: { className?: string }) {
               <path d="M66 52v14H52" />
               <path d="M20 66H6V52" />
             </g>
-            <circle cx="36" cy="36" r="2.4" fill="#9FDFA8" />
+            <circle cx="36" cy="36" r="2.4" fill="#EA6336" />
           </svg>
           {target && !selected ? (
             <div className="absolute top-[76px] left-1/2 -translate-x-1/2 whitespace-nowrap text-center">
@@ -623,7 +623,7 @@ function SkyFallback({
           <g stroke="#CFE0A0" strokeWidth="1.2" opacity="0.6">
             <path d="M6 16V6h10M36 6h10v10M46 36v10H36M16 46H6V36" />
           </g>
-          <circle cx="26" cy="26" r="2" fill="#9FDFA8" />
+          <circle cx="26" cy="26" r="2" fill="#EA6336" />
         </svg>
         <p className="max-w-xs font-mono text-[11px] leading-relaxed tracking-[0.14em] text-fog uppercase">
           This browser cannot open a WebGL context, so the live sky is

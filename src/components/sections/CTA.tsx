@@ -12,7 +12,7 @@ export function CTA() {
     <section className="relative overflow-hidden py-28 sm:py-40">
       <div className="pointer-events-none absolute inset-0">
         <Starfield density={0.8} />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,rgba(255,59,48,0.08)_40%,var(--color-void)_85%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_5%,rgba(208,52,44,0.08)_40%,var(--color-void)_85%)]" />
       </div>
 
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">

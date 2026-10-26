@@ -16,7 +16,7 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const BUTTON_STYLES: Record<ButtonVariant, string> = {
   primary:
-    "bg-sage text-white hover:bg-[#ff453a] active:bg-[#ff2d20] shadow-[0_10px_40px_-18px_rgba(255,59,48,0.9)]",
+    "bg-sage text-white hover:bg-[#E03C34] active:bg-[#B82C25] shadow-[0_10px_40px_-18px_rgba(208,52,44,0.9)]",
   secondary:
     "bg-surface-2 text-mist border border-line hover:bg-surface-3 hover:border-char",
   ghost: "text-fog hover:text-mist",
@@ -87,7 +87,7 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-20px_rgba(255,59,48,0.5)] ${BUTTON_STYLES[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-20px_rgba(208,52,44,0.5)] ${BUTTON_STYLES[variant]} ${className}`}
     >
       {children}
     </Link>

@@ -21,7 +21,7 @@ export function Hero() {
       {/* ------------------------------------------------------------ backdrop */}
       <div className="pointer-events-none absolute inset-0">
         <Starfield density={0.5} />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_10%,rgba(255,59,48,0.14),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_10%,rgba(208,52,44,0.14),transparent_65%)]" />
         <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-void via-void/80 to-transparent" />
       </div>
 
@@ -103,7 +103,7 @@ export function Hero() {
         {/* -------------------------------------------------------- device */}
         <Reveal from="right" delay={0.2} duration={0.9} className="relative">
           <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
-            <div className="pointer-events-none absolute -inset-16 bg-[radial-gradient(circle_at_center,rgba(255,59,48,0.14),transparent_62%)]" />
+            <div className="pointer-events-none absolute -inset-16 bg-[radial-gradient(circle_at_center,rgba(208,52,44,0.14),transparent_62%)]" />
             <motion.div
               animate={reduced ? undefined : { y: [0, -10, 0] }}
               transition={{

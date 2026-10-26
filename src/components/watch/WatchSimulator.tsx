@@ -187,7 +187,7 @@ export function WatchSimulator({
   return (
     <div className={className}>
       <div className="relative">
-        <div className="pointer-events-none absolute -inset-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,59,48,0.12),transparent_65%)]" />
+        <div className="pointer-events-none absolute -inset-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(208,52,44,0.12),transparent_65%)]" />
         <WatchFrame crown={crown} className="relative mx-auto max-w-[280px]">
           <AnimatePresence mode="wait">
             <motion.div

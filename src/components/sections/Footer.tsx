@@ -5,28 +5,19 @@ const COLUMNS = [
   {
     title: "Product",
     links: [
-      { label: "Live sky", href: "#sky" },
-      { label: "How it works", href: "#how" },
-      { label: "The watch", href: "#watch" },
+      { label: "Live sky", href: "/sky" },
+      { label: "How it works", href: "/#how" },
+      { label: "The watch", href: "/#watch" },
       { label: "Catalogue", href: "/catalogue" },
     ],
   },
   {
-    title: "Data",
+    title: "Founder",
     links: [
-      { label: "d3-celestial", href: "https://github.com/ofrohn/d3-celestial" },
-      { label: "Astronomy Engine", href: "https://github.com/cosinekitty/astronomy" },
-      { label: "Celestrak", href: "https://celestrak.org" },
-      { label: "IAU constellations", href: "https://www.iau.org/public/themes/constellations/" },
-    ],
-  },
-  {
-    title: "Build",
-    links: [
-      { label: "Next.js", href: "https://nextjs.org" },
-      { label: "Three.js", href: "https://threejs.org" },
-      { label: "Motion", href: "https://motion.dev" },
-      { label: "Tailwind CSS", href: "https://tailwindcss.com" },
+      { label: "Frizzia Darren", href: "#" },
+      { label: "Ady Junior", href: "#" },
+      { label: "Ryujin", href: "#" },
+      { label: "Vannya", href: "#" },
     ],
   },
 ];
@@ -49,7 +40,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2">
             {COLUMNS.map((col) => (
               <div key={col.title}>
                 <h3 className="font-mono text-[10px] tracking-[0.18em] text-dim uppercase">

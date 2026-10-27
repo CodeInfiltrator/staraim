@@ -11,29 +11,24 @@ export default function SkyPage() {
   return (
     <>
       <Nav />
-      <main className="bg-void pt-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-3 text-center">
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.22em] text-mint uppercase">
-              <span className="h-px w-6 bg-mint/50" />
+      <main className="bg-void">
+        <div className="mx-auto max-w-7xl px-2 sm:px-4">
+          <header className="pt-14 pb-2 text-center">
+            <span className="inline-flex items-center gap-2 font-mono text-[9px] tracking-[0.22em] text-mint uppercase">
+              <span className="h-px w-4 bg-mint/50" />
               Live sky
-              <span className="h-px w-6 bg-mint/50" />
+              <span className="h-px w-4 bg-mint/50" />
             </span>
-            <h1 className="mt-2 text-balance text-2xl font-medium tracking-[-0.03em] text-mist sm:text-3xl lg:text-4xl">
-              See what's above
-              <br />
-              <span className="text-sage">right now</span>
+            <h1 className="mt-1 text-balance text-lg font-medium tracking-[-0.03em] text-mist sm:text-xl lg:text-2xl">
+              See what's above · <span className="text-sage">right now</span>
             </h1>
-            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-fog">
-              A live, interactive map of the sky computed from real ephemeris data.
-            </p>
           </header>
 
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-12 -z-10">
-              <Starfield density={0.2} />
+            <div className="pointer-events-none absolute -inset-8 -z-10">
+              <Starfield density={0.15} />
             </div>
-            <SkyMap className="h-[calc(100svh-10rem)] w-full touch-pan-y" />
+            <SkyMap className="h-[calc(100svh-6.5rem)] w-full touch-pan-y" />
           </div>
         </div>
       </main>

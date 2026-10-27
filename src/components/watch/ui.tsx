@@ -20,10 +20,10 @@ export function StatusBar({
       <span className="flex items-center gap-[5px]">
         {/* Signal */}
         <svg width="11" height="9" viewBox="0 0 11 9" aria-hidden>
-          <rect x="0" y="6" width="2" height="3" rx="0.5" fill="#9BE7BA" />
-          <rect x="3" y="4" width="2" height="5" rx="0.5" fill="#9BE7BA" />
-          <rect x="6" y="2" width="2" height="7" rx="0.5" fill="#9BE7BA" />
-          <rect x="9" y="0" width="2" height="9" rx="0.5" fill="#9BE7BA" opacity="0.35" />
+          <rect x="0" y="6" width="2" height="3" rx="0.5" fill="#D0342C" />
+          <rect x="3" y="4" width="2" height="5" rx="0.5" fill="#D0342C" />
+          <rect x="6" y="2" width="2" height="7" rx="0.5" fill="#D0342C" />
+          <rect x="9" y="0" width="2" height="9" rx="0.5" fill="#D0342C" opacity="0.35" />
         </svg>
         {/* Battery */}
         <svg width="18" height="9" viewBox="0 0 18 9" aria-hidden>
@@ -33,11 +33,11 @@ export function StatusBar({
             width="14"
             height="8"
             rx="2.2"
-            stroke="#9BE7BA"
+            stroke="#D0342C"
             strokeOpacity="0.5"
           />
-          <rect x="16" y="3" width="1.5" height="3" rx="0.75" fill="#9BE7BA" opacity="0.5" />
-          <rect x="2" y="2" width={10 * battery} height="5" rx="1.2" fill="#9BE7BA" />
+          <rect x="16" y="3" width="1.5" height="3" rx="0.75" fill="#D0342C" opacity="0.5" />
+          <rect x="2" y="2" width={10 * battery} height="5" rx="1.2" fill="#D0342C" />
         </svg>
       </span>
     </div>
@@ -57,7 +57,7 @@ export function WatchScreen({
   className?: string;
 }) {
   return (
-    <div className={`flex h-full w-full flex-col bg-[#090C0A] ${className}`}>
+    <div className={`flex h-full w-full flex-col bg-[#000000] ${className}`}>
       <StatusBar time={time} />
       <div className="flex min-h-0 flex-1 flex-col">{children}</div>
     </div>
@@ -79,9 +79,9 @@ export function WatchButton({
   className?: string;
 }) {
   const tones = {
-    primary: "bg-[#D5E8B5] text-[#1A251B]",
-    outline: "border border-[#354338] bg-[#202821] text-[#F3F1E8]",
-    plain: "text-[#9BE7BA]",
+    primary: "bg-[#D0342C] text-white",
+    outline: "border border-[#D0342C]/60 bg-[#1a0a0a] text-[#F3F1E8]",
+    plain: "text-[#D0342C]",
   } as const;
 
   return (

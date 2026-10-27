@@ -34,7 +34,7 @@ export default function SkyPage() {
             <div className="pointer-events-none absolute -inset-20 -z-10">
               <Starfield density={0.3} />
             </div>
-            <SkyMap className="h-[min(85vh,52rem)] w-full" />
+            <SkyMap className="h-[min(90vh,calc(100svh-10rem))] w-full touch-pan-y" />
           </div>
         </div>
       </main>

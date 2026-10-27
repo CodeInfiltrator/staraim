@@ -74,7 +74,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[10px] tracking-[0.14em] text-dim uppercase">
-            © {new Date().getFullYear()} Staraim — a concept build
+            © {new Date().getFullYear()} Staraim — by fourward
           </p>
           <p className="font-mono text-[10px] tracking-[0.14em] text-dim uppercase">
             Star data: d3-celestial (BSD-3) · Ephemeris: Astronomy Engine (MIT)

@@ -11,9 +11,9 @@ export default function SkyPage() {
   return (
     <>
       <Nav />
-      <main className="bg-void pt-16 pb-4">
+      <main className="bg-void pt-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-4 text-center">
+          <header className="mb-3 text-center">
             <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.22em] text-mint uppercase">
               <span className="h-px w-6 bg-mint/50" />
               Live sky
@@ -33,7 +33,7 @@ export default function SkyPage() {
             <div className="pointer-events-none absolute -inset-12 -z-10">
               <Starfield density={0.2} />
             </div>
-            <SkyMap className="h-[min(78vh,calc(100svh-11rem))] w-full touch-pan-y" />
+            <SkyMap className="h-[calc(100svh-10rem)] w-full touch-pan-y" />
           </div>
         </div>
       </main>

@@ -11,29 +11,29 @@ export default function SkyPage() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen bg-void pt-20 pb-8">
+      <main className="bg-void pt-16 pb-4">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-6 text-center">
+          <header className="mb-4 text-center">
             <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.22em] text-mint uppercase">
               <span className="h-px w-6 bg-mint/50" />
               Live sky
               <span className="h-px w-6 bg-mint/50" />
             </span>
-            <h1 className="mt-3 text-balance text-3xl font-medium tracking-[-0.03em] text-mist sm:text-4xl lg:text-5xl">
+            <h1 className="mt-2 text-balance text-2xl font-medium tracking-[-0.03em] text-mist sm:text-3xl lg:text-4xl">
               See what's above
               <br />
               <span className="text-sage">right now</span>
             </h1>
-            <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-fog">
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-fog">
               A live, interactive map of the sky computed from real ephemeris data.
             </p>
           </header>
 
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-16 -z-10">
-              <Starfield density={0.25} />
+            <div className="pointer-events-none absolute -inset-12 -z-10">
+              <Starfield density={0.2} />
             </div>
-            <SkyMap className="h-[min(82vh,calc(100svh-14rem))] w-full touch-pan-y" />
+            <SkyMap className="h-[min(78vh,calc(100svh-11rem))] w-full touch-pan-y" />
           </div>
         </div>
       </main>

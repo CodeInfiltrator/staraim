@@ -2,43 +2,77 @@
 
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { SectionHeading } from "@/components/ui/primitives";
+import { getDictionary, Locale } from "@/lib/i18n";
 
-const STEPS = [
-  {
-    n: "01",
-    title: "Calibrate",
-    body: "Hold the Moon in the reticle for two seconds. Staraim learns the offset between your wrist and the sky.",
-    detail: "Two seconds, once per session",
-  },
-  {
-    n: "02",
-    title: "Point",
-    body: "Raise your arm naturally. The watch reads its own inertial motion and works out exactly where it is looking.",
-    detail: "No compass, no magnetometer",
-  },
-  {
-    n: "03",
-    title: "Know",
-    body: "The moment the crosshair settles, the watch names what you are pointing at — and how far away it is.",
-    detail: "2,061 stars · 142 deep sky objects",
-  },
-];
-
-export function HowItWorks() {
+export function HowItWorks({ lang = "en" }: { lang?: Locale }) {
+  const STEPS =
+    lang === "id"
+      ? [
+          {
+            n: "01",
+            title: "Kalibrasi",
+            body: "Pegang Bulan di dalam reticle selama dua detik. Staraim mempelajari perbedaan antara pergelangan tangan Anda dan langit.",
+            detail: "Dua detik, sekali per sesi",
+          },
+          {
+            n: "02",
+            title: "Arahkan",
+            body: "Angkat lengan Anda secara alami. Jam tangan membaca gerakan inersialnya sendiri dan menentukan ke mana arahnya.",
+            detail: "Tanpa kompas, tanpa magnetometer",
+          },
+          {
+            n: "03",
+            title: "Ketahui",
+            body: "Saat bidikan stabil, jam tangan langsung menamai objek yang Anda arahkan — dan seberapa jauh jaraknya.",
+            detail: "2.061 bintang · 142 objek langit dalam",
+          },
+        ]
+      : [
+          {
+            n: "01",
+            title: "Calibrate",
+            body: "Hold the Moon in the reticle for two seconds. Staraim learns the offset between your wrist and the sky.",
+            detail: "Two seconds, once per session",
+          },
+          {
+            n: "02",
+            title: "Point",
+            body: "Raise your arm naturally. The watch reads its own inertial motion and works out exactly where it is looking.",
+            detail: "No compass, no magnetometer",
+          },
+          {
+            n: "03",
+            title: "Know",
+            body: "The moment the crosshair settles, the watch names what you are pointing at — and how far away it is.",
+            detail: "2,061 stars · 142 deep sky objects",
+          },
+        ];
   return (
     <section id="how" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="How it works"
+            eyebrow={lang === "id" ? "Cara Kerja" : "How it works"}
             title={
-              <>
-                Three steps, no manual
-                <br />
-                alignment.
-              </>
+              lang === "id" ? (
+                <>
+                  Tiga langkah, tanpa
+                  <br />
+                  penyelarasan manual.
+                </>
+              ) : (
+                <>
+                  Three steps, no manual
+                  <br />
+                  alignment.
+                </>
+              )
             }
-            body="The hard part of sky identification is not the catalogue — it is knowing which way the wrist is pointing. Staraim solves that with the watch's own motion sensors."
+            body={
+              lang === "id"
+                ? "Bagian tersulit dari identifikasi langit bukan katalognya — tapi mengetahui ke arah mana pergelangan tangan menunjuk. Staraim menyelesaikannya dengan sensor gerak bawaan jam tangan."
+                : "The hard part of sky identification is not the catalogue — it is knowing which way the wrist is pointing. Staraim solves that with the watch's own motion sensors."
+            }
           />
         </Reveal>
 

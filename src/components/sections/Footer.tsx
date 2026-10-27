@@ -3,21 +3,37 @@ import { Reticle } from "./Nav";
 
 const COLUMNS = [
   {
-    title: "Product",
+    title: "Pages",
     links: [
-      { label: "Live sky", href: "/sky" },
-      { label: "How it works", href: "/#how" },
-      { label: "The watch", href: "/#watch" },
+      { label: "Why it matters", href: "/#why" },
+      { label: "Features", href: "/#features" },
+      { label: "Traction", href: "/#traction" },
+      { label: "Where riders are", href: "/#riders" },
+      { label: "FAQ", href: "/#faq" },
       { label: "Catalogue", href: "/catalogue" },
     ],
   },
   {
-    title: "Founder",
+    title: "Founders",
     links: [
       { label: "Frizzia Darren", href: "#" },
       { label: "Ady Junior", href: "#" },
       { label: "Ryujin", href: "#" },
       { label: "Vannya", href: "#" },
+    ],
+  },
+  {
+    title: "Follow Us",
+    links: [
+      { label: "LinkedIn", href: "#" },
+      { label: "Instagram", href: "#" },
+    ],
+  },
+  {
+    title: "Language",
+    links: [
+      { label: "English", href: "#" },
+      { label: "Indonesia", href: "#" },
     ],
   },
 ];
@@ -40,7 +56,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {COLUMNS.map((col) => (
               <div key={col.title}>
                 <h3 className="font-mono text-[10px] tracking-[0.18em] text-dim uppercase">

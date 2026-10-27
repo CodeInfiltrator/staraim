@@ -16,7 +16,7 @@ export default async function CataloguePage({
     <main>
       <Nav lang={locale} />
       <div className="pt-24">
-        <Catalogue />
+        <Catalogue lang={locale} />
       </div>
     </main>
   );

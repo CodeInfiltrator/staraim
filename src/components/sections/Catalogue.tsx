@@ -6,25 +6,33 @@ import { SkyIndex } from "@/lib/astro/sky";
 import { compassPoint } from "@/lib/astro/coords";
 import { useObserverLocation } from "@/lib/useObserverLocation";
 import { Counter } from "@/components/ui/primitives";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
+import { Reveal } from "@/components/ui/motion";
+import { Locale } from "@/lib/i18n";
 
-const STATS = [
-  { value: 2061, label: "Stars", note: "to magnitude 6.5" },
-  { value: 464, label: "Proper names", note: "from the IAU list" },
-  { value: 89, label: "Constellations", note: "IAU stick figures" },
-  { value: 142, label: "Deep sky objects", note: "Messier and NGC" },
-];
+export function Catalogue({ lang = "en" }: { lang?: Locale }) {
+  const STATS =
+    lang === "id"
+      ? [
+          { value: 2061, label: "Bintang", note: "hingga magnitudo 6,5" },
+          { value: 464, label: "Nama resmi", note: "dari daftar IAU" },
+          { value: 89, label: "Rasi bintang", note: "figur IAU" },
+          { value: 142, label: "Objek langit dalam", note: "Messier dan NGC" },
+        ]
+      : [
+          { value: 2061, label: "Stars", note: "to magnitude 6.5" },
+          { value: 464, label: "Proper names", note: "from the IAU list" },
+          { value: 89, label: "Constellations", note: "IAU stick figures" },
+          { value: 142, label: "Deep sky objects", note: "Messier and NGC" },
+        ];
 
-const KIND_TONE: Record<string, string> = {
-  planet: "text-venus",
-  moon: "text-moon",
-  sun: "text-sage",
-  satellite: "text-mint",
-  dso: "text-neptune",
-  star: "text-mist",
-};
-
-export function Catalogue() {
+  const KIND_TONE: Record<string, string> = {
+    planet: "text-venus",
+    moon: "text-moon",
+    sun: "text-sage",
+    satellite: "text-mint",
+    dso: "text-neptune",
+    star: "text-mist",
+  };
   const { location } = useObserverLocation();
   const [now, setNow] = useState(() => new Date());
 
@@ -63,17 +71,27 @@ export function Catalogue() {
             <div className="flex flex-col gap-5">
               <span className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.22em] text-mint uppercase">
                 <span className="h-px w-6 bg-mint/50" />
-                The catalogue
+                {lang === "id" ? "Katalog" : "The catalogue"}
               </span>
               <h2 className="text-balance text-3xl leading-[1.08] font-medium tracking-[-0.03em] text-mist sm:text-4xl lg:text-5xl">
-                Everything is computed
-                <br />
-                on the device.
+                {lang === "id" ? (
+                  <>
+                    Semua dihitung
+                    <br />
+                    di perangkat.
+                  </>
+                ) : (
+                  <>
+                    Everything is computed
+                    <br />
+                    on the device.
+                  </>
+                )}
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-fog sm:text-lg">
-                No API keys, no rate limits, no monthly subscription. The star
-                catalogue ships inside the app and the planetary positions are
-                derived from published orbital theory while you watch.
+                {lang === "id"
+                  ? "Tanpa API key, tanpa batas, tanpa langganan. Katalog bintang sudah ada di aplikasi dan posisi planet dihitung dari teori orbit yang dipublikasikan secara real-time."
+                  : "No API keys, no rate limits, no monthly subscription. The star catalogue ships inside the app and the planetary positions are derived from published orbital theory while you watch."}
               </p>
 
               <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
@@ -96,11 +114,11 @@ export function Catalogue() {
             <div className="overflow-hidden rounded-2xl border border-line bg-surface">
               <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
                 <span className="font-mono text-[11px] tracking-[0.16em] text-mist uppercase">
-                  Above your horizon
+                  {lang === "id" ? "Di atas cakrawala" : "Above your horizon"}
                 </span>
                 <span className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] text-mint uppercase">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint" />
-                  live
+                  {lang === "id" ? "langsung" : "live"}
                 </span>
               </div>
 

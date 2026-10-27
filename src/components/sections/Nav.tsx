@@ -65,15 +65,29 @@ export function Nav({ lang = "en" }: { lang?: Locale }) {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <select
-            value={lang}
-            onChange={(e) => changeLanguage(e.target.value as Locale)}
-            className="hidden rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-mist focus:outline-none sm:block"
-          >
-            <option value="en">EN</option>
-            <option value="id">ID</option>
-          </select>
+        <div className="flex items-center gap-2">
+          <div className="hidden items-center rounded-full border border-line bg-surface/80 p-0.5 sm:flex">
+            <button
+              onClick={() => changeLanguage("en")}
+              className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
+                lang === "en"
+                  ? "bg-sage text-white"
+                  : "text-fog hover:text-mist"
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => changeLanguage("id")}
+              className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
+                lang === "id"
+                  ? "bg-sage text-white"
+                  : "text-fog hover:text-mist"
+              }`}
+            >
+              ID
+            </button>
+          </div>
           <Link
             href={`/${lang}/sky`}
             className="hidden rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#E03C34] sm:inline-flex"

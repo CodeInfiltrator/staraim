@@ -331,6 +331,10 @@ export class SkyScene {
       if (moved < 4) this.pick(e.clientX, e.clientY);
     };
     const onWheel = (e: WheelEvent) => {
+      // Allow page scroll when not zooming with modifier keys
+      if (!e.ctrlKey && !e.metaKey) {
+        return;
+      }
       e.preventDefault();
       this.zoom = Math.max(0.45, Math.min(2.6, this.zoom * (1 - e.deltaY * 0.0012)));
       this.autoDrift = false;
@@ -340,7 +344,7 @@ export class SkyScene {
     canvas.addEventListener("pointermove", onPointerMove);
     canvas.addEventListener("pointerup", onPointerUp);
     canvas.addEventListener("pointercancel", onPointerUp);
-    canvas.addEventListener("wheel", onWheel, { passive: false });
+    canvas.addEventListener("wheel", onWheel, { passive: true });
 
     this.cleanup = () => {
       canvas.removeEventListener("pointerdown", onPointerDown);

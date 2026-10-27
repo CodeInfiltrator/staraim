@@ -4,8 +4,9 @@ import { motion, useReducedMotion } from "motion/react";
 import { ButtonLink } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/motion";
 import { Starfield } from "@/components/sky/Starfield";
+import { Locale } from "@/lib/i18n";
 
-export function CTA() {
+export function CTA({ lang = "en" }: { lang?: Locale }) {
   const reduced = useReducedMotion();
 
   return (
@@ -19,31 +20,34 @@ export function CTA() {
         <Reveal>
           <span className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.22em] text-mint uppercase">
             <span className="h-px w-6 bg-mint/50" />
-            Ready when you are
+            {lang === "id" ? "Siap kapan saja" : "Ready when you are"}
             <span className="h-px w-6 bg-mint/50" />
           </span>
         </Reveal>
 
         <Reveal delay={0.08}>
           <h2 className="mt-7 text-balance text-4xl leading-[1.04] font-medium tracking-[-0.035em] text-mist sm:text-6xl">
-            Look up.
+            {lang === "id" ? "Lihat ke atas." : "Look up."}
             <br />
-            We&apos;ll tell you what&apos;s there.
+            {lang === "id" ? "Kami akan memberitahu apa yang ada." : "We'll tell you what's there."}
           </h2>
         </Reveal>
 
         <Reveal delay={0.16}>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-fog sm:text-lg">
-            The whole catalogue, the whole solar system and ten live satellites —
-            on a watch that already knows which way you are pointing.
+            {lang === "id"
+              ? "Seluruh katalog, tata surya, dan sepuluh satelit langsung — di jam tangan yang sudah tahu ke mana Anda menunjuk."
+              : "The whole catalogue, the whole solar system and ten live satellites — on a watch that already knows which way you are pointing."}
           </p>
         </Reveal>
 
         <Reveal delay={0.24}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <ButtonLink href="#sky">Open the live sky</ButtonLink>
-            <ButtonLink href="#watch" variant="secondary">
-              See the watch
+            <ButtonLink href={`/${lang}/sky`}>
+              {lang === "id" ? "Buka langit langsung" : "Open the live sky"}
+            </ButtonLink>
+            <ButtonLink href={`/${lang}#watch`} variant="secondary">
+              {lang === "id" ? "Lihat jam tangan" : "See the watch"}
             </ButtonLink>
           </div>
         </Reveal>
@@ -58,7 +62,7 @@ export function CTA() {
               ease: "easeInOut",
             }}
           >
-            No account · No subscription · Works offline
+            {lang === "id" ? "Tanpa akun · Tanpa langganan · Bisa offline" : "No account · No subscription · Works offline"}
           </motion.p>
         </Reveal>
       </div>

@@ -108,9 +108,13 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="Under the hood"
-            title="Astronomy that fits in your pocket."
-            body="Staraim is not a wrapper around a web service. The catalogue ships with the app, the ephemeris is computed on demand and the pointing maths runs in a few hundred microseconds."
+            eyebrow={lang === "id" ? "Di balik layar" : "Under the hood"}
+            title={lang === "id" ? "Astronomi yang muat di saku Anda." : "Astronomy that fits in your pocket."}
+            body={
+              lang === "id"
+                ? "Staraim bukan pembungkus layanan web. Katalog sudah ada di aplikasi, efemeris dihitung saat dibutuhkan, dan perhitungan arah berjalan dalam hitungan mikrodetik."
+                : "Staraim is not a wrapper around a web service. The catalogue ships with the app, the ephemeris is computed on demand and the pointing maths runs in a few hundred microseconds."
+            }
           />
         </Reveal>
 

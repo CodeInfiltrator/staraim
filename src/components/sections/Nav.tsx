@@ -5,10 +5,11 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const LINKS = [
-  { href: "/sky", label: "Live sky" },
-  { href: "/catalogue", label: "Catalogue" },
+  { href: "/", label: "Home" },
   { href: "/#how", label: "How it works" },
   { href: "/#watch", label: "Watch" },
+  { href: "/sky", label: "Live sky" },
+  { href: "/catalogue", label: "Catalogue" },
 ];
 
 export function Nav() {

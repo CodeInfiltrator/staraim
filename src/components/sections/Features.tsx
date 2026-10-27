@@ -2,39 +2,75 @@
 
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/motion";
 import { SectionHeading } from "@/components/ui/primitives";
+import { Locale } from "@/lib/i18n";
 
-const FEATURES = [
-  {
-    title: "A real catalogue",
-    body: "2,061 stars down to magnitude 6.5, 89 IAU constellation figures and 142 Messier and NGC objects — computed on your device, never fetched.",
-    icon: "catalogue",
-  },
-  {
-    title: "Live ephemeris",
-    body: "The Sun, Moon and seven planets are positioned from VSOP87 and ELP2000 for your exact location and the exact second.",
-    icon: "ephemeris",
-  },
-  {
-    title: "Real satellites",
-    body: "Ten tracked spacecraft propagated from current two-line element sets. Watch the ISS cross the sky in real time.",
-    icon: "satellite",
-  },
-  {
-    title: "Point, don't pan",
-    body: "The watch reads its own inertial frame, so you can hold your arm however feels natural and still get an exact answer.",
-    icon: "point",
-  },
-  {
-    title: "Works offline",
-    body: "Everything — catalogue, ephemeris, satellite propagation — runs on the device. No account, no signal, no subscription.",
-    icon: "offline",
-  },
-  {
-    title: "Honest about ambiguity",
-    body: "When two objects sit within the same degree, Staraim says so and lets you pick, instead of confidently naming the wrong one.",
-    icon: "honest",
-  },
-];
+export function Features({ lang = "en" }: { lang?: Locale }) {
+  const FEATURES =
+    lang === "id"
+      ? [
+          {
+            title: "Katalog nyata",
+            body: "2.061 bintang hingga magnitudo 6,5, 89 figur rasi IAU dan 142 objek Messier dan NGC — dihitung di perangkat Anda, tidak diunduh.",
+            icon: "catalogue",
+          },
+          {
+            title: "Efemeris langsung",
+            body: "Matahari, Bulan dan tujuh planet diposisikan menggunakan VSOP87 dan ELP2000 untuk lokasi dan waktu persis Anda.",
+            icon: "ephemeris",
+          },
+          {
+            title: "Satelit nyata",
+            body: "Sepuluh pesawat ruang angkasa dilacak dari set elemen dua baris terkini. Saksikan ISS melintasi langit secara real-time.",
+            icon: "satellite",
+          },
+          {
+            title: "Arahkan, bukan geser",
+            body: "Jam tangan membaca kerangka inersialnya sendiri, jadi Anda bisa mengangkat lengan dengan posisi alami dan tetap mendapatkan hasil akurat.",
+            icon: "point",
+          },
+          {
+            title: "Bisa offline",
+            body: "Semua — katalog, efemeris, propagasi satelit — berjalan di perangkat. Tanpa akun, tanpa sinyal, tanpa langganan.",
+            icon: "offline",
+          },
+          {
+            title: "Jujur tentang ambiguitas",
+            body: "Ketika dua objek berada dalam jarak kurang dari satu derajat, Staraim mengatakannya dan membiarkan Anda memilih, alih-alih menebak dengan yakin.",
+            icon: "honest",
+          },
+        ]
+      : [
+          {
+            title: "A real catalogue",
+            body: "2,061 stars down to magnitude 6.5, 89 IAU constellation figures and 142 Messier and NGC objects — computed on your device, never fetched.",
+            icon: "catalogue",
+          },
+          {
+            title: "Live ephemeris",
+            body: "The Sun, Moon and seven planets are positioned from VSOP87 and ELP2000 for your exact location and the exact second.",
+            icon: "ephemeris",
+          },
+          {
+            title: "Real satellites",
+            body: "Ten tracked spacecraft propagated from current two-line element sets. Watch the ISS cross the sky in real time.",
+            icon: "satellite",
+          },
+          {
+            title: "Point, don't pan",
+            body: "The watch reads its own inertial frame, so you can hold your arm however feels natural and still get an exact answer.",
+            icon: "point",
+          },
+          {
+            title: "Works offline",
+            body: "Everything — catalogue, ephemeris, satellite propagation — runs on the device. No account, no signal, no subscription.",
+            icon: "offline",
+          },
+          {
+            title: "Honest about ambiguity",
+            body: "When two objects sit within the same degree, Staraim says so and lets you pick, instead of confidently naming the wrong one.",
+            icon: "honest",
+          },
+        ];
 
 function Icon({ name }: { name: string }) {
   const common = {
@@ -102,7 +138,6 @@ function Icon({ name }: { name: string }) {
   }
 }
 
-export function Features() {
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">

@@ -11,30 +11,29 @@ export default function SkyPage() {
   return (
     <>
       <Nav />
-      <main className="min-h-screen bg-void pt-24 pb-12">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <header className="mb-8 text-center">
-            <span className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.22em] text-mint uppercase">
+      <main className="min-h-screen bg-void pt-20 pb-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-6 text-center">
+            <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.22em] text-mint uppercase">
               <span className="h-px w-6 bg-mint/50" />
               Live sky
               <span className="h-px w-6 bg-mint/50" />
             </span>
-            <h1 className="mt-5 text-balance text-4xl font-medium tracking-[-0.03em] text-mist sm:text-5xl lg:text-6xl">
+            <h1 className="mt-3 text-balance text-3xl font-medium tracking-[-0.03em] text-mist sm:text-4xl lg:text-5xl">
               See what's above
               <br />
               <span className="text-sage">right now</span>
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-fog">
+            <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-fog">
               A live, interactive map of the sky computed from real ephemeris data.
-              Drag to explore, tap to identify, and scrub through time.
             </p>
           </header>
 
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-20 -z-10">
-              <Starfield density={0.3} />
+            <div className="pointer-events-none absolute -inset-16 -z-10">
+              <Starfield density={0.25} />
             </div>
-            <SkyMap className="h-[min(90vh,calc(100svh-10rem))] w-full touch-pan-y" />
+            <SkyMap className="h-[min(82vh,calc(100svh-14rem))] w-full touch-pan-y" />
           </div>
         </div>
       </main>

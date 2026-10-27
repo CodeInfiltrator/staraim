@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { getDictionary, Locale } from "@/lib/i18n";
 
 export function Nav({ lang = "en" }: { lang?: Locale }) {
   const dict = getDictionary(lang);
+  const router = useRouter();
+  const pathname = usePathname();
   
   const LINKS = [
     { href: `/${lang}`, label: dict.home },
@@ -15,6 +18,13 @@ export function Nav({ lang = "en" }: { lang?: Locale }) {
     { href: `/${lang}/sky`, label: dict.live },
     { href: `/${lang}/catalogue`, label: dict.catalogue },
   ];
+
+  const changeLanguage = (newLang: Locale) => {
+    if (newLang === lang) return;
+    const segments = pathname.split("/");
+    segments[1] = newLang;
+    router.push(segments.join("/") || `/${newLang}`);
+  };
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const reduced = useReducedMotion();
@@ -56,6 +66,14 @@ export function Nav({ lang = "en" }: { lang?: Locale }) {
         </div>
 
         <div className="flex items-center gap-3">
+          <select
+            value={lang}
+            onChange={(e) => changeLanguage(e.target.value as Locale)}
+            className="hidden rounded-lg border border-line bg-surface px-2 py-1.5 text-sm text-mist focus:outline-none sm:block"
+          >
+            <option value="en">EN</option>
+            <option value="id">ID</option>
+          </select>
           <Link
             href={`/${lang}/sky`}
             className="hidden rounded-pill bg-sage px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#E03C34] sm:inline-flex"
@@ -85,6 +103,26 @@ export function Nav({ lang = "en" }: { lang?: Locale }) {
                   {l.label}
                 </Link>
               ))}
+              <div className="mt-3 flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    changeLanguage("en");
+                    setOpen(false);
+                  }}
+                  className={`flex-1 rounded-lg px-3 py-2 text-sm ${lang === "en" ? "bg-sage text-white" : "border border-line text-fog"}`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    changeLanguage("id");
+                    setOpen(false);
+                  }}
+                  className={`flex-1 rounded-lg px-3 py-2 text-sm ${lang === "id" ? "bg-sage text-white" : "border border-line text-fog"}`}
+                >
+                  Indonesia
+                </button>
+              </div>
               <Link
                 href={`/${lang}/sky`}
                 onClick={() => setOpen(false)}

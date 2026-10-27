@@ -1,44 +1,44 @@
 import Link from "next/link";
 import { Reticle } from "./Nav";
+import { getDictionary, Locale } from "@/lib/i18n";
 
-const COLUMNS = [
-  {
-    title: "Pages",
-    links: [
-      { label: "Why it matters", href: "/#why" },
-      { label: "Features", href: "/#features" },
-      { label: "Traction", href: "/#traction" },
-      { label: "Where riders are", href: "/#riders" },
-      { label: "FAQ", href: "/#faq" },
-      { label: "Catalogue", href: "/catalogue" },
-    ],
-  },
-  {
-    title: "Founders",
-    links: [
-      { label: "Frizzia Darren", href: "#" },
-      { label: "Ady Junior", href: "#" },
-      { label: "Ryujin", href: "#" },
-      { label: "Vannya", href: "#" },
-    ],
-  },
-  {
-    title: "Follow Us",
-    links: [
-      { label: "LinkedIn", href: "#" },
-      { label: "Instagram", href: "#" },
-    ],
-  },
-  {
-    title: "Language",
-    links: [
-      { label: "English", href: "#" },
-      { label: "Indonesia", href: "#" },
-    ],
-  },
-];
-
-export function Footer() {
+export function Footer({ lang = "en" }: { lang?: Locale }) {
+  const dict = getDictionary(lang);
+  
+  const COLUMNS = [
+    {
+      title: dict.pages,
+      links: [
+        { label: dict.home, href: `/${lang}` },
+        { label: dict.how, href: `/${lang}#how` },
+        { label: dict.watch, href: `/${lang}#watch` },
+        { label: dict.live, href: `/${lang}/sky` },
+        { label: dict.catalogue, href: `/${lang}/catalogue` },
+      ],
+    },
+    {
+      title: dict.founders,
+      links: [
+        { label: "Frizzia Darren", href: "#" },
+        { label: "Ady Junior", href: "#" },
+        { label: "Ryujin", href: "#" },
+        { label: "Vannya", href: "#" },
+      ],
+    },
+    {
+      title: dict.followUs,
+      links: [
+        { label: "Instagram", href: "https://www.instagram.com/staraim.app" },
+      ],
+    },
+    {
+      title: dict.language,
+      links: [
+        { label: "English", href: "/en" },
+        { label: "Indonesia", href: "/id" },
+      ],
+    },
+  ];
   return (
     <footer className="relative border-t border-line">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">

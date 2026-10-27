@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import { dictionaries, Locale } from "@/lib/i18n";
+import { dictionaries } from "@/lib/i18n";
 import { Nav } from "@/components/sections/Nav";
 import { Footer } from "@/components/sections/Footer";
 
@@ -11,15 +11,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const dict = dictionaries[lang];
+  const locale = lang as "en" | "id";
   
   return {
     title: "Staraim — Know what's above.",
     description:
-      lang === "id"
+      locale === "id"
         ? "Arahkan jam tangan Apple Watch Anda ke langit dan Staraim akan mengidentifikasinya."
         : "Point your Apple Watch at the sky and Staraim names the object.",
   };
@@ -30,14 +30,15 @@ export default async function LangLayout({
   params,
 }: {
   children: ReactNode;
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const locale = (lang === "id" ? "id" : "en") as "en" | "id";
   return (
     <>
-      <Nav lang={lang} />
+      <Nav lang={locale} />
       {children}
-      <Footer lang={lang} />
+      <Footer lang={locale} />
     </>
   );
 }

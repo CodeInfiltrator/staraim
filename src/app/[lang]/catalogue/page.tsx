@@ -1,6 +1,5 @@
 import { Nav } from "@/components/sections/Nav";
 import { Catalogue } from "@/components/sections/Catalogue";
-import { Locale } from "@/lib/i18n";
 
 export const metadata = {
   title: "Catalogue",
@@ -9,12 +8,13 @@ export const metadata = {
 export default async function CataloguePage({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const locale = (lang === "id" ? "id" : "en") as "en" | "id";
   return (
     <main>
-      <Nav lang={lang} />
+      <Nav lang={locale} />
       <div className="pt-24">
         <Catalogue />
       </div>

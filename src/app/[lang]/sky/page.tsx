@@ -1,6 +1,5 @@
 import { Nav } from "@/components/sections/Nav";
 import { SkyDemo } from "@/components/sections/SkyDemo";
-import { Locale } from "@/lib/i18n";
 
 export const metadata = {
   title: "Live sky",
@@ -9,12 +8,13 @@ export const metadata = {
 export default async function SkyPage({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const locale = (lang === "id" ? "id" : "en") as "en" | "id";
   return (
     <main className="relative flex min-h-[100svh] flex-col overflow-hidden">
-      <Nav lang={lang} />
+      <Nav lang={locale} />
       <div className="flex min-h-[100svh] flex-1 flex-col pt-16">
         <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-5 sm:px-8">
           <header className="pt-14 pb-1 text-center flex-shrink-0">

@@ -5,6 +5,7 @@ import { AnimatedHeadline, Reveal } from "@/components/ui/motion";
 import { ButtonLink } from "@/components/ui/primitives";
 import { Starfield } from "@/components/sky/Starfield";
 import { WatchSimulator } from "@/components/watch/WatchSimulator";
+import { getDictionary, Locale } from "@/lib/i18n";
 
 const STATS = [
   { value: "2,061", label: "stars" },
@@ -13,8 +14,9 @@ const STATS = [
   { value: "0", label: "network calls" },
 ];
 
-export function Hero() {
+export function Hero({ lang = "en" }: { lang?: Locale }) {
   const reduced = useReducedMotion();
+  const dict = getDictionary(lang);
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden pt-28 pb-16 sm:pt-32">
@@ -42,29 +44,29 @@ export function Hero() {
 
           <Reveal from="up" delay={0.08} duration={0.8}>
             <h1 className="mt-7 text-balance text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.98] font-medium tracking-[-0.045em] text-mist">
-              <AnimatedHeadline text="Know what" />
+              {lang === "id" ? "Ketahui apa yang" : "Know what"}
               <br />
-              <AnimatedHeadline
-                text="is above."
-                wordClassName="text-sage"
-                delay={0.12}
-              />
+              <span className="text-sage">
+                {lang === "id" ? "ada di atas." : "is above."}
+              </span>
             </h1>
           </Reveal>
 
           <Reveal from="up" delay={0.2}>
             <p className="mt-7 max-w-lg text-lg leading-relaxed text-fog">
-              The real sky is the interface. Point your wrist at anything and
-              Staraim names it — using the watch&apos;s own motion sensors and a
-              catalogue that runs entirely on device.
+              {lang === "id"
+                ? "Langit adalah antarmukanya. Arahkan pergelangan tangan Anda ke apa pun dan Staraim akan mengidentifikasinya — menggunakan sensor gerak jam tangan dan katalog yang berjalan sepenuhnya di perangkat."
+                : "The real sky is the interface. Point your wrist at anything and Staraim names it — using the watch's own motion sensors and a catalogue that runs entirely on device."}
             </p>
           </Reveal>
 
           <Reveal from="up" delay={0.28}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <ButtonLink href="/sky">Open the live sky</ButtonLink>
-              <ButtonLink href="/#watch" variant="secondary">
-                See the watch
+              <ButtonLink href={`/${lang}/sky`}>
+                {lang === "id" ? "Buka langit langsung" : "Open the live sky"}
+              </ButtonLink>
+              <ButtonLink href={`/${lang}#watch`} variant="secondary">
+                {lang === "id" ? "Lihat jam tangan" : "See the watch"}
               </ButtonLink>
             </div>
           </Reveal>

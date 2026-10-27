@@ -4,14 +4,20 @@ import { WatchExperience } from "@/components/sections/WatchExperience";
 import { Features } from "@/components/sections/Features";
 import { CTA } from "@/components/sections/CTA";
 
-export default async function LangPage() {
+export default async function LangPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const locale = (lang === "id" ? "id" : "en") as "en" | "id";
   return (
     <main>
-      <Hero />
-      <HowItWorks />
-      <WatchExperience />
-      <Features />
-      <CTA />
+      <Hero lang={locale} />
+      <HowItWorks lang={locale} />
+      <WatchExperience lang={locale} />
+      <Features lang={locale} />
+      <CTA lang={locale} />
     </main>
   );
 }

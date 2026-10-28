@@ -97,6 +97,19 @@ export function HowItWorks({ lang = "en" }: { lang?: Locale }) {
             </StaggerItem>
           ))}
         </Stagger>
+
+        <Reveal>
+          <div className="mt-12 overflow-hidden rounded-2xl border border-line shadow-2xl">
+            <video
+              src="/videoPitch.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/recentUI.jpeg"
+              className="w-full"
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   );

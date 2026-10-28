@@ -3,6 +3,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WatchExperience } from "@/components/sections/WatchExperience";
 import { Features } from "@/components/sections/Features";
 import { CTA } from "@/components/sections/CTA";
+import { Reveal } from "@/components/ui/motion";
 
 export default async function LangPage({
   params,

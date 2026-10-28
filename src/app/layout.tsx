@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     default: "Staraim — Know what's above.",
     template: "%s · Staraim",
   },
+  icons: {
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
   description:
     "Point your Apple Watch at the sky and Staraim names the object. A live sky map, a real star catalogue and a watch app that uses the IMU to read the heavens.",
   keywords: [

@@ -53,7 +53,7 @@ export function Footer({ lang = "en" }: { lang?: Locale }) {
         <div className="grid gap-12 md:grid-cols-[1.4fr_2fr]">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
-              <Reticle className="h-6 w-6" />
+              <img src="/logo.jpeg" alt="Staraim" className="h-7 w-7 rounded-full" />
               <span className="text-[15px] font-medium text-mist">Staraim</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-fog">

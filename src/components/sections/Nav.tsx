@@ -46,7 +46,7 @@ export function Nav({ lang = "en" }: { lang?: Locale }) {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link href={`/${lang}`} className="group flex items-center gap-2.5">
-          <Reticle className="h-6 w-6" />
+          <img src="/logo.jpeg" alt="Staraim" className="h-7 w-7 rounded-full" />
           <span className="text-[15px] font-medium tracking-[-0.01em] text-mist">
             Staraim
           </span>

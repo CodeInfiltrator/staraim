@@ -106,7 +106,7 @@ export function HowItWorks({ lang = "en" }: { lang?: Locale }) {
               playsInline
               preload="metadata"
               poster="/recentUI.jpeg"
-              className="w-full"
+              className="w-full aspect-video object-cover"
             />
           </div>
         </Reveal>

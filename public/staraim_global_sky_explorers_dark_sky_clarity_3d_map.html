@@ -27,8 +27,8 @@
                         surface: '#0D111A',
                         surfaceElevated: '#131926',
                         slateMuted: '#8E96A8',
-                        amberPeak: '#38BDF8',
-                        cyanSky: '#38BDF8',
+                        amberPeak: '#D0342C',
+                        cyanSky: '#D0342C',
                         indigoSky: '#818CF8',
                     }
                 }
@@ -143,7 +143,7 @@
             width: 28px;
             height: 8px;
             border-radius: 9999px;
-            background: linear-gradient(90deg, #1E3A8A 0%, #38BDF8 55%, #FFFFFF 100%);
+            background: linear-gradient(90deg, #1E3A8A 0%, #D0342C 55%, #FFFFFF 100%);
             box-shadow: 0 0 8px rgba(56, 189, 248, 0.45);
         }
         body.mode-darksky .rc-legend-bar {
@@ -268,7 +268,7 @@
         /* Bortle Scale Gradient Bar */
         .bortle-spectrum {
             background: linear-gradient(90deg, 
-                #38BDF8 0%,     /* Bortle 1: Pristine Dark Sky */
+                #D0342C 0%,     /* Bortle 1: Pristine Dark Sky */
                 #818CF8 22%,    /* Bortle 2-3: True Dark / Rural */
                 #34D399 45%,    /* Bortle 4: Rural/Suburban transition */
                 #FBBF24 68%,    /* Bortle 5-6: Suburban */
@@ -295,7 +295,7 @@
             <!-- Brand Identity -->
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg bg-[#131926] border border-white/10 flex items-center justify-center shadow-inner">
-                    <svg class="w-4 h-4 text-sky-400" id="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="w-4 h-4 text-staraim" id="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="3"/>
                         <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
                     </svg>
@@ -310,7 +310,7 @@
             <div class="flex items-center gap-3">
                 <!-- Live Telemetry Status -->
                 <div class="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] font-mono text-slateMuted">
-                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400 live-dot"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-staraim live-dot"></span>
                     <span>VIIRS + SQM LIVE</span>
                 </div>
 
@@ -333,8 +333,8 @@
         <!-- TOP 3-WAY MODE SWITCHER BAR (Sky Explorers | Dark-Sky Clarity | Light Pollution) -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-8 border-b border-white/[0.07]">
             <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-sky-400" id="section-indicator"></span>
-                <p id="ui-eyebrow" class="font-mono text-xs uppercase tracking-[0.18em] text-sky-400/90 font-medium">
+                <span class="w-2 h-2 rounded-full bg-staraim" id="section-indicator"></span>
+                <p id="ui-eyebrow" class="font-mono text-xs uppercase tracking-[0.18em] text-staraim/90 font-medium">
                     DI MANA PENJELAJAH LANGIT KAMI
                 </p>
             </div>
@@ -436,7 +436,7 @@
                     <span class="font-mono text-[11px] text-slateMuted">
                         <span class="text-white font-medium" id="ui-visible-nodes-count">45</span> puncak kota &amp; titik observasi
                     </span>
-                    <button onclick="resetCameraView()" class="text-[11px] font-mono text-sky-400 hover:text-sky-300 px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] transition">
+                    <button onclick="resetCameraView()" class="text-[11px] font-mono text-staraim hover:text-sky-300 px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] transition">
                         Reset Kamera ↺
                     </button>
                 </div>
@@ -462,7 +462,7 @@
             </div>
             <!-- Stat 4 -->
             <div class="bg-[#0D111A] p-6 sm:p-7">
-                <div id="kpi-4-val" class="font-mono text-2xl sm:text-4xl font-semibold text-sky-400 tracking-tight">96%</div>
+                <div id="kpi-4-val" class="font-mono text-2xl sm:text-4xl font-semibold text-staraim tracking-tight">96%</div>
                 <div id="kpi-4-label" class="mt-1.5 text-xs sm:text-sm text-slateMuted">Di antaranya di Indonesia</div>
             </div>
         </section>
@@ -496,7 +496,7 @@
                 <!-- Quick Filter Helper at Bottom of Left Card -->
                 <div class="mt-6 pt-4 border-t border-white/[0.07] flex items-center justify-between text-xs text-slateMuted">
                     <span id="ui-list-footer-hint">Menampilkan 10 lokasi tertinggi sesuai mode aktif</span>
-                    <button onclick="cycleDatasetMode()" class="font-mono text-xs text-sky-400 hover:underline flex items-center gap-1" id="ui-switch-mode-inline">
+                    <button onclick="cycleDatasetMode()" class="font-mono text-xs text-staraim hover:underline flex items-center gap-1" id="ui-switch-mode-inline">
                         <span>Lihat Peringkat Langit Terbersih (Bortle 1)</span>
                         <span>→</span>
                     </button>
@@ -531,7 +531,7 @@
                 <div class="bg-[#0D111A] border border-white/[0.08] rounded-2xl p-6 sm:p-7 relative overflow-hidden">
                     <div class="flex items-start justify-between gap-3">
                         <div>
-                            <span class="font-mono text-[10px] uppercase tracking-widest text-sky-400" id="inspector-eyebrow">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-staraim" id="inspector-eyebrow">
                                 ANALISIS LANGIT & VISIBILITAS
                             </span>
                             <h3 id="inspector-city-name" class="text-lg font-semibold text-white mt-0.5">
@@ -573,7 +573,7 @@
                         </div>
                         <div class="bg-[#080B11]/80 p-3 rounded-xl border border-white/[0.05]">
                             <div class="text-[10px] text-slateMuted font-mono">Explorers</div>
-                            <div id="inspector-explorers" class="font-mono text-sm font-semibold text-sky-400 mt-0.5">21.467</div>
+                            <div id="inspector-explorers" class="font-mono text-sm font-semibold text-staraim mt-0.5">21.467</div>
                             <div class="text-[10px] text-slateMuted" id="inspector-window">Jun – Sep</div>
                         </div>
                     </div>
@@ -2232,7 +2232,7 @@
                                     <span class="text-sm font-medium text-white truncate">${loc.name}</span>
                                 </div>
                                 <div class="mt-1.5 w-full max-w-[200px] h-1 rounded-full bg-white/[0.06] overflow-hidden">
-                                    <div class="h-full rounded-full bg-sky-400/80" style="width: ${barPct}%"></div>
+                                    <div class="h-full rounded-full bg-staraim/80" style="width: ${barPct}%"></div>
                                 </div>
                             </div>
                         </div>

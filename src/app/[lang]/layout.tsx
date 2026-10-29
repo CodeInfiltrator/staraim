@@ -33,6 +33,7 @@ export default async function LangLayout({
 }) {
   const { lang } = await params;
   const locale = (lang === "id" ? "id" : "en") as "en" | "id";
+  
   return (
     <>
       <Nav lang={locale} />

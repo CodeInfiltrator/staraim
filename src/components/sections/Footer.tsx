@@ -27,10 +27,10 @@ export function Footer({ lang = "en" }: { lang?: Locale }) {
     {
       title: dict.founders,
       links: [
-        { label: "Frizzia Darren", href: "#" },
-        { label: "Ady Junior", href: "#" },
-        { label: "Ryujin", href: "#" },
-        { label: "Vannya", href: "#" },
+        { label: "Frizzia Darren", href: "https://www.linkedin.com/in/frizziadarren/" },
+        { label: "Ady Junior", href: "https://www.linkedin.com/in/adysbgy/" },
+        { label: "Ryujin", href: "https://www.linkedin.com/in/daniel-ferryal-a54578226/" },
+        { label: "Vannya", href: "https://www.linkedin.com/in/vannya-ade-gunawan/" },
       ],
     },
     {

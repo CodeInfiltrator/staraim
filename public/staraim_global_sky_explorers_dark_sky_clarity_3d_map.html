@@ -295,7 +295,7 @@
     <!-- MAIN EDITORIAL SECTION -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24">
 
-        <!-- TOP 3-WAY MODE SWITCHER BAR (Sky Explorers | Dark-Sky Clarity | Light Pollution) -->
+        <!-- TOP BAR WITH EYEBROW, MODE SWITCHER AND LANGUAGE -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-8 border-b border-white/[0.07]">
             <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-staraim" id="section-indicator"></span>
@@ -304,26 +304,32 @@
                 </p>
             </div>
 
-            <!-- 3-Way Dataset Mode Switcher -->
-            <div class="inline-flex flex-wrap p-1 rounded-xl bg-[#0D111A] border border-white/[0.08] self-start lg:self-auto gap-1">
-                <button id="mode-btn-explorers" onclick="setDatasetMode('explorers')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-sky-500/15 text-sky-300 border border-sky-500/30 shadow-sm">
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z"/>
-                    </svg>
-                    <span id="ui-mode-explorers-label">Populasi Sky Explorers (138.032)</span>
-                </button>
-                <button id="mode-btn-darksky" onclick="setDatasetMode('darksky')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all text-slateMuted hover:text-white border border-transparent">
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
-                    <span id="ui-mode-darksky-label">Kemurnian Langit (Bortle 1–3)</span>
-                </button>
-                <button id="mode-btn-pollution" onclick="setDatasetMode('pollution')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all text-slateMuted hover:text-white border border-transparent">
-                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <span id="ui-mode-pollution-label">Polusi Cahaya Kota (Bortle 8–9)</span>
-                </button>
+            <div class="flex flex-wrap items-center gap-2 self-start lg:self-auto">
+                <!-- 3-Way Dataset Mode Switcher -->
+                <div class="inline-flex flex-wrap p-1 rounded-xl bg-[#0D111A] border border-white/[0.08] gap-1">
+                    <button id="mode-btn-explorers" onclick="setDatasetMode('explorers')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all bg-sky-500/15 text-sky-300 border border-sky-500/30 shadow-sm">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z"/>
+                        </svg>
+                        <span id="ui-mode-explorers-label">Populasi Sky Explorers (138.032)</span>
+                    </button>
+                    <button id="mode-btn-darksky" onclick="setDatasetMode('darksky')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all text-slateMuted hover:text-white border border-transparent">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        <span id="ui-mode-darksky-label">Kemurnian Langit (Bortle 1–3)</span>
+                    </button>
+                    <button id="mode-btn-pollution" onclick="setDatasetMode('pollution')" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all text-slateMuted hover:text-white border border-transparent">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <span id="ui-mode-pollution-label">Polusi Cahaya Kota (Bortle 8–9)</span>
+                    </button>
+                </div>
+                <div class="inline-flex rounded-lg p-0.5 bg-[#0D111A] border border-white/[0.08]" role="group" aria-label="Language Switcher">
+                    <button id="lang-id" onclick="setLanguage('id')" class="px-2.5 py-1 rounded-md text-xs font-mono font-medium transition-all bg-white/10 text-white">ID</button>
+                    <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-xs font-mono font-medium transition-all text-slateMuted hover:text-white">EN</button>
+                </div>
             </div>
         </div>
 

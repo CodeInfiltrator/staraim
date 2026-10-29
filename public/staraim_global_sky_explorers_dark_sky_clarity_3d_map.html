@@ -290,42 +290,7 @@
 <body class="astro-bg min-h-screen selection:bg-sky-500/20 selection:text-sky-300">
 
     <!-- TOP EDITORIAL NAVIGATION BAR -->
-    <header class="sticky top-0 z-50 border-b border-white/[0.07] bg-[#080B11]/85 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand Identity -->
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-[#131926] border border-white/10 flex items-center justify-center shadow-inner">
-                    <svg class="w-4 h-4 text-staraim" id="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="3"/>
-                        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
-                    </svg>
-                </div>
-                <div class="flex items-baseline gap-2.5">
-                    <span class="font-semibold tracking-tight text-white text-base">StarAim</span>
-                    <span class="text-[11px] font-mono uppercase tracking-widest text-slateMuted hidden sm:inline-block border-l border-white/10 pl-2.5">Astro-Telemetry & Light Pollution Atlas</span>
-                </div>
-            </div>
-
-            <!-- Right Controls: Mode Switcher Quick Pill + ID/EN Language Toggle -->
-            <div class="flex items-center gap-3">
-                <!-- Live Telemetry Status -->
-                <div class="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] font-mono text-slateMuted">
-                    <span class="w-1.5 h-1.5 rounded-full bg-staraim live-dot"></span>
-                    <span>VIIRS + SQM LIVE</span>
-                </div>
-
-                <!-- Language Switcher (ID / EN) -->
-                <div class="inline-flex rounded-lg p-0.5 bg-[#0D111A] border border-white/[0.08]" role="group" aria-label="Language Switcher">
-                    <button id="lang-id" onclick="setLanguage('id')" class="px-2.5 py-1 rounded-md text-xs font-mono font-medium transition-all bg-white/10 text-white">
-                        ID
-                    </button>
-                    <button id="lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md text-xs font-mono font-medium transition-all text-slateMuted hover:text-white">
-                        EN
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    
 
     <!-- MAIN EDITORIAL SECTION -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24">

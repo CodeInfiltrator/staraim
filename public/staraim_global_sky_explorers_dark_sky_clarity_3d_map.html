@@ -1942,12 +1942,12 @@
             // Scroll wheel subtle zoom
             container.addEventListener('wheel', (e) => {
                 if (!canvasActive) {
-                    setCanvasActive(true);
                     return;
                 }
+                e.preventDefault();
                 const factor = e.deltaY > 0 ? 0.08 : -0.08;
                 camState.targetRadius = Math.max(20, Math.min(68, camState.targetRadius * (1 + factor)));
-            }, { passive: true });
+            }, { passive: false });
 
             // Touch events for mobile drag rotation
             container.addEventListener('touchstart', (e) => {

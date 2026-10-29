@@ -1,5 +1,4 @@
 import { Nav } from "@/components/sections/Nav";
-import { Footer } from "@/components/sections/Footer";
 
 export const metadata = {
   title: "Sky Explorers",
@@ -22,7 +21,6 @@ export default async function ExplorersPage({
           title="StarAim Sky Explorers 3D Map"
         />
       </div>
-      <Footer lang={locale} />
     </main>
   );
 }

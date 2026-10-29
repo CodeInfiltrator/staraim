@@ -13,7 +13,6 @@ export default async function ExplorersPage({
   const locale = (lang === "id" ? "id" : "en") as "en" | "id";
   return (
     <main className="min-h-screen bg-void">
-      <Nav lang={locale} />
       <div className="pt-16">
         <iframe
           src="/staraim_global_sky_explorers_dark_sky_clarity_3d_map.html"

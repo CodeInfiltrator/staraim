@@ -1481,6 +1481,7 @@
             applyElevationsToGeometry();
 
             setupStageInteractions(container);
+            setCanvasActive(false);
             window.addEventListener('resize', onStageResize);
         }
 
@@ -1858,9 +1859,46 @@
         /* =========================================================================
            6. CAMERA ORBIT, RAYCASTING & INTERACTION HANDLERS
            ========================================================================= */
+        let canvasActive = false;
+        function setCanvasActive(active) {
+            canvasActive = active;
+            const container = document.getElementById('canvas-container');
+            if (container) {
+                container.style.cursor = active ? (isDragging ? 'grabbing' : 'grab') : 'default';
+            }
+            const hint = document.getElementById('ui-stage-hint');
+            if (hint) {
+                hint.textContent = active ? 'Geser untuk memutar · Gulir untuk zoom · Arahkan ke puncak untuk melihat kotanya' : 'Klik pada peta untuk mengaktifkan interaksi 3D';
+            }
+        }
+
         function setupStageInteractions(container) {
+            container.addEventListener('click', (e) => {
+                if (e.target.closest('button')) return;
+                if (!canvasActive) {
+                    setCanvasActive(true);
+                    const rect = container.getBoundingClientRect();
+                    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+                    return;
+                }
+                const rect = container.getBoundingClientRect();
+                mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObjects(hitMeshes);
+                if (intersects.length > 0) {
+                    const hitLoc = intersects[0].object.userData.location;
+                    focusLocation(hitLoc.id, false);
+                }
+            });
+
             container.addEventListener('mousedown', (e) => {
                 if (e.target.closest('button')) return;
+                if (!canvasActive) {
+                    setCanvasActive(true);
+                    return;
+                }
                 isDragging = true;
                 prevMouse.x = e.clientX;
                 prevMouse.y = e.clientY;
@@ -1876,6 +1914,11 @@
                     e.clientX >= rect.left && e.clientX <= rect.right &&
                     e.clientY >= rect.top && e.clientY <= rect.bottom
                 );
+
+                if (!canvasActive) {
+                    if (inside) hoveredLocationId = null;
+                    return;
+                }
 
                 if (isDragging) {
                     const dx = e.clientX - prevMouse.x;
@@ -1896,22 +1939,12 @@
                 }
             });
 
-            // Click on a 3D peak to lock selection & inspect it
-            container.addEventListener('click', (e) => {
-                if (e.target.closest('button')) return;
-                const rect = container.getBoundingClientRect();
-                mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-                mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-                raycaster.setFromCamera(mouse, camera);
-                const intersects = raycaster.intersectObjects(hitMeshes);
-                if (intersects.length > 0) {
-                    const hitLoc = intersects[0].object.userData.location;
-                    focusLocation(hitLoc.id, false);
-                }
-            });
-
             // Scroll wheel subtle zoom
             container.addEventListener('wheel', (e) => {
+                if (!canvasActive) {
+                    setCanvasActive(true);
+                    return;
+                }
                 const factor = e.deltaY > 0 ? 0.08 : -0.08;
                 camState.targetRadius = Math.max(20, Math.min(68, camState.targetRadius * (1 + factor)));
             }, { passive: true });

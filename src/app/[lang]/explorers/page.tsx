@@ -12,7 +12,7 @@ export default async function ExplorersPage({
   const { lang } = await params;
   const locale = (lang === "id" ? "id" : "en") as "en" | "id";
   return (
-    <main className="min-h-screen bg-[#D0342C]">
+    <main className="min-h-screen bg-void">
       <Nav lang={locale} />
       <div className="pt-16">
         <iframe

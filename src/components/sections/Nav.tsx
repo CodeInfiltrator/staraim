@@ -16,6 +16,7 @@ export function Nav({ lang = "en" }: { lang?: Locale }) {
     { href: `/${lang}#how`, label: dict.how },
     { href: `/${lang}#watch`, label: dict.watch },
     { href: `/${lang}/sky`, label: dict.live },
+    { href: `/${lang}/explorers`, label: dict.explorers },
     { href: `/${lang}/catalogue`, label: dict.catalogue },
   ];
 

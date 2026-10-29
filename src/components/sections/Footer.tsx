@@ -21,6 +21,7 @@ export function Footer({ lang = "en" }: { lang?: Locale }) {
         { label: dict.how, href: `/${lang}#how` },
         { label: dict.watch, href: `/${lang}#watch` },
         { label: dict.live, href: `/${lang}/sky` },
+        { label: dict.explorers, href: `/${lang}/explorers` },
         { label: dict.catalogue, href: `/${lang}/catalogue` },
       ],
     },

@@ -1900,6 +1900,7 @@
                     return;
                 }
                 isDragging = true;
+                lastUserInteract = Date.now();
                 prevMouse.x = e.clientX;
                 prevMouse.y = e.clientY;
             });
@@ -1925,6 +1926,7 @@
                     const dy = e.clientY - prevMouse.y;
                     camState.targetTheta -= dx * 0.0065;
                     camState.targetPhi = Math.max(0.45, Math.min(1.36, camState.targetPhi - dy * 0.0055));
+                    lastUserInteract = Date.now();
                     prevMouse.x = e.clientX;
                     prevMouse.y = e.clientY;
                     return;
@@ -1945,6 +1947,7 @@
                     return;
                 }
                 e.preventDefault();
+                lastUserInteract = Date.now();
                 const factor = e.deltaY > 0 ? 0.08 : -0.08;
                 camState.targetRadius = Math.max(20, Math.min(68, camState.targetRadius * (1 + factor)));
             }, { passive: false });
@@ -2020,9 +2023,21 @@
             renderer.setSize(container.clientWidth, container.clientHeight);
         }
 
+        let autoRotate = 0;
+        let lastUserInteract = Date.now();
+
         // Main Animation Loop
         function animateStage() {
             requestAnimationFrame(animateStage);
+            if (canvasActive && !isDragging) {
+                if (Date.now() - lastUserInteract > 4000) {
+                    autoRotate += 0.00025;
+                    camState.targetTheta = -0.34 + autoRotate;
+                }
+            } else if (!canvasActive) {
+                autoRotate += 0.00018;
+                camState.targetTheta = -0.34 + autoRotate;
+            }
 
             // Smooth spherical camera damping
             camState.theta += (camState.targetTheta - camState.theta) * 0.08;

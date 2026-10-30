@@ -4,7 +4,7 @@ import { SkyMap } from "@/components/sky/SkyMap";
 
 export const metadata = {
   title: "Live Sky — Staraim",
-  description: "Interactivep live sky map with real-time star positions, planets, satellites and object identification.",
+  description: "Interactive live sky map with real-time star positions, planets, satellites and object identification.",
 };
 
 export default function SkyPage() {

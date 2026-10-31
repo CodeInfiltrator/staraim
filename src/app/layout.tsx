@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     apple: "/logo.jpeg",
   },
   description:
-    "Point your Apple Watch at the sky and Staraim names the object. A live sky map, a real star catalogue and a watch app that uses the IMU to read the heavens.",
+    "Points your Apple Watch at the sky and Staraim names the object. A live sky map, a real star catalogue and a watch app that uses the IMU to read the heavens.",
   keywords: [
     "astronomy app",
     "Apple Watch",
